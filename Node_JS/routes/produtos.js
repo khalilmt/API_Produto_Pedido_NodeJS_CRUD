@@ -13,4 +13,20 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.get('/:id_produto', (req, res, next) => {
+    const id = req.params.id_produto
+
+    if (id === 'unico') {
+        res.status(200).send({
+            mensagem: 'ID Unico',
+            id: id
+        });
+    }else{
+        res.status(200).send({
+            mensagem: 'Você passou um ID'
+        });
+    }
+})
+
+
 module.exports = router;
