@@ -22,7 +22,7 @@ router.get('/:id_produtos', (req, res, next) => {
     if(id === 'unico') {
         res.status(200).send({
             mensagem: 'Id Unico',
-            id: id
+            id_produtos: id
         });
     } else {
         res.status(200).send({
