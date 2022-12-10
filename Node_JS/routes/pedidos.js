@@ -1,34 +1,35 @@
 const express = require('express');
-const router = require.Router();
+const router = express.Router();
 
-// RETORNA TODOS OS PEDIDOS
+// RETORNA OS PEDIDO
 router.get('/', (req, res, next) => {
     res.status(200).send({
-        mensagem: 'Retorna um pedido'
-
+        mensagem: 'Retorna os Pedidos'
     });
 });
 
 // INSERE UM PEDIDO
 router.post('/', (req, res, next) => {
     res.status(201).send({
-        mensagem: 'Insere um pedido'
+        mensagem:  'Insere um Pedido'
     });
 });
 
-//  RETORNA OS DADOS DE UM PEDIDO
+// RETORNA OS DADOS DE UM PEDIDO
 router.get('/id_pedido', (req, res, next) => {
     const id = req.params.id_pedido
 
     res.status(200).send({
-        mensagem: 'Detalhes do pedido',
+        mensagem: 'Dados do Pedido',
         id_pedido: id
     });
 });
 
-// EXCLUI UM PEDIDO
+// PEDIDO EXCLUIDO
 router.delete('/', (req, res, next) => {
     res.status(201).send({
-        mensagem: 'Deleta um pedido'
+        mensagem: 'Pedido Excluido'
     });
 });
+
+module.exports = router;
