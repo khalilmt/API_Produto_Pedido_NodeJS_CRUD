@@ -1,49 +1,32 @@
 const express = require('express');
 const router = express.Router();
 
-// RETORNA TODOS OS PRODUTOS
 router.get('/', (req, res, next) => {
     res.status(200).send({
-        mensagem: 'Retorna todos os produtos'
+        mensagem: 'Usando GET dentro da rota de Produtos'
     });
 });
 
-// INSERE UM PRODUTO
 router.post('/', (req, res, next) => {
     res.status(201).send({
-        mensagem: 'Insere um produto'
+        mensagem: 'Usando POST dentro da rota de Produtos'
     });
 });
 
-// RETORNA OS DADOS DE UM PRODUTO
-router.get('/:id_produtos', (req, res, next) => {
-    const id = req.params.id_produtos
+router.get('/:id_produto', (req, res, next) => {
+    const id = req.params.id_produto
 
-    if(id === 'unico') {
+    if (id === 'unico') {
         res.status(200).send({
-            mensagem: 'Id Unico',
-            id_produtos: id
+            mensagem: 'ID Unico',
+            id: id
         });
-    } else {
+    }else{
         res.status(200).send({
-            mensagem: 'Voce passou um ID'
+            mensagem: 'Você passou um ID'
         });
     }
-        
 });
 
-// ALTERA PRODUTO
-router.patch('/', (req, res, next) => {
-    res.status(201).send({
-        mensagem: 'Usando PATCH'
-    });
-});
-
-// EXCLUI UM PRODUTO
-router.delete('/', (req, res, next) => {
-    res.status(201).send({
-        mensagem: 'Usando DELETE'
-    });
-});
 
 module.exports = router;
