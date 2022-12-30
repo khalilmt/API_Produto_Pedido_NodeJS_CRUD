@@ -11,6 +11,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false})); //apenas dados simples
 app.use(bodyParser.json()); // json apenas como entrada no bodyParser
 
+// ROTAS USADAS
 app.use('/pedidos', rotaPedidos);
 app.use('/produtos', rotaProdutos);
 
